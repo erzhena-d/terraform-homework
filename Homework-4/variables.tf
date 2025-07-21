@@ -1,5 +1,5 @@
 variable "internet_gateway" {
-  type = string
+  type        = string
   description = "igw name"
 }
 

@@ -41,9 +41,9 @@ resource "aws_subnet" "private1" {
 }
 
 resource "aws_subnet" "private2" {
-  vpc_id                          = aws_vpc.kaizen.id
-  cidr_block                      = var.subnet_config[3].cidr
-  availability_zone               = var.subnet_config[3].availability_zone
+  vpc_id                  = aws_vpc.kaizen.id
+  cidr_block              = var.subnet_config[3].cidr
+  availability_zone       = var.subnet_config[3].availability_zone
   map_public_ip_on_launch = var.subnet_config[3].auto_assign_public_ip
 
   tags = {
