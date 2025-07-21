@@ -4,6 +4,10 @@ resource "aws_security_group" "allow_tls" {
   description = "Allow TLS inbound traffic"
   vpc_id      = aws_vpc.kaizen.id
 
+  tags = merge(local.common_tags, {
+    Name = "allow_tls"
+  })
+
   ingress {
     description = "TLS from VPC"
     from_port   = var.port[0]
@@ -43,5 +47,4 @@ resource "aws_security_group" "allow_tls" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-#   tags = locals.common_tags
-# }
+
